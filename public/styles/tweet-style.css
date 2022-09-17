@@ -28,13 +28,13 @@ article.tweet header > h3 {
 article.tweet header > h4 {
   display: flex;
   color: #484848;
-  margin-right: 450px;
+  margin-right: 430px;
 }
 
 article.tweet header > h5 {
   display: flex;
   color: #484848;
-  margin-right: 380px;
+  margin-right: 390px;
   font-size: 24px;
 }
 
