@@ -1,0 +1,11 @@
+body > header {
+  padding-top: 120px;
+  display: flex;
+  height: 520px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e1c8bb82;
+  background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+}
