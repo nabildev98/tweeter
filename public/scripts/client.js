@@ -6,46 +6,20 @@
 
 // will turn the tweet objects into HTML formatted tweet articles
 
-
-
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-const escape = function(str) {
-  let div = document.createElement('div');
+const escape = function (str) {
+  let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-const renderTweet= function(data) {
-  $('#tweet-container').empty();
+const renderTweet = function (data) {
+  $("#tweet-container").empty();
   for (let tweet of data) {
-    $('#tweet-container').prepend(createTweetElement(tweet));
+    $("#tweet-container").prepend(createTweetElement(tweet));
   }
 };
 
-const createTweetElement = function(data) {
+const createTweetElement = function (data) {
   console.log(data);
   let $tweet = $(`
 
@@ -75,52 +49,42 @@ const createTweetElement = function(data) {
 </article>
   `);
   return $tweet;
-
 };
 
-
-const submitTweet = function(event) {
+const submitTweet = function (event) {
   event.preventDefault();
   // console.log('data being sent to server!');
 
-$('.error').slideUp(400).text('');
+  $(".error").slideUp(400).text("");
 
-if (!$(this).children().find('textarea').val()) {
-  return $('.error').text('Valid tweet must be entered').slideDown();
+  if (!$(this).children().find("textarea").val()) {
+    return $(".error").text("Valid tweet must be entered").slideDown();
+  }
+  if ($(this).children().find("textarea").val().length > 140) {
+    return $(".error").text("Maximum limit exceeded").slideDown();
+  }
 
-} 
-if ($(this).children().find('textarea').val().length > 140) {
-  return $('.error').text('Maximum limit exceeded').slideDown();
-}
-
-  $.ajax('/tweets', {
-    method: 'POST',
-    data: $(this).serialize()
-  }) 
-
-  .then(function(tweet) {
-    loadTweets();
+  $.ajax("/tweets", {
+    method: "POST",
+    data: $(this).serialize(),
   })
-  .catch((err) => {
-    console.log('error', err);
-  });
-  $(this).children().find('textarea').val('');
-  $('.counter').text(140);
+
+    .then(function (tweet) {
+      loadTweets();
+    })
+    .catch((err) => {
+      console.log("error", err);
+    });
+  $(this).children().find("textarea").val("");
+  $(".counter").text(140);
 };
 
-
-
-const loadTweets = function() {
-  $.ajax('/tweets', 
-  { method: 'GET' })
-  .then((tweets) => {
+const loadTweets = function () {
+  $.ajax("/tweets", { method: "GET" }).then((tweets) => {
     console.log("pulling tweets from database!");
     renderTweet(tweets);
-  })
-}
-
-
-
+  });
+};
 
 const timeSinceTweet = () => {
   const rightNow = Date();
@@ -128,8 +92,8 @@ const timeSinceTweet = () => {
   const timeDifference = (rightNow - dateOfTweet) / millisofDay;
   const hourDifference = timeDifference * 24;
   const minuteDifference = hourDifference * 60;
-  if (Math.floor(hourDifference) === 0) {		
-    return `${Math.floor(minuteDifference)} minutes`;		
+  if (Math.floor(hourDifference) === 0) {
+    return `${Math.floor(minuteDifference)} minutes`;
   } else if (Math.floor(timeDifference / 365) === 0) {
     return `${Math.floor(hourDifference)} hours`;
   } else if (timeDifference < 31) {
@@ -141,17 +105,8 @@ const timeSinceTweet = () => {
   }
 };
 
-
-
-
-
-
-
-
-
-
 $(document).ready(() => {
   loadTweets();
   // renderTweet(data);
-  $( ".tweetSubmit" ).submit(submitTweet);
-})
+  $(".tweetSubmit").submit(submitTweet);
+});

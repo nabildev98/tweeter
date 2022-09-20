@@ -5,22 +5,20 @@
   background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
 }
 
-.tweeter1, .writeTweet1 {
-  display: none; 
+.tweeter1,
+.writeTweet1 {
+  display: none;
 }
 
 .nav1 {
   display: none;
-
 }
 
-
 @media only screen and (max-width: 1024px) {
-
   .nav1 {
     height: 120px;
     width: 100%;
-    color: #FFFFFF;
+    color: #ffffff;
     padding-left: 0.5em;
     padding-right: 0.5em;
     display: flex;
@@ -29,44 +27,44 @@
     position: fixed;
   }
 
-.tweeter1 {
-  display: block; 
-  font-family: "Bungee", sans serif;
-}
+  .tweeter1 {
+    display: block;
+    font-family: "Bungee", sans serif;
+  }
 
-.writeTweet1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .writeTweet1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-nav {
-  display: none;
-}
+  nav {
+    display: none;
+  }
 
-.profile {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
+  .profile {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 
-.container {
-  position: relative;
-  top: 300px;
-}
+  .container {
+    position: relative;
+    top: 300px;
+  }
 
-header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
+  header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 
-.new-tweet {
-  padding: 50px;
-}
+  .new-tweet {
+    padding: 50px;
+  }
 
-#tweet-container {
-  padding: 50px;
-}
+  #tweet-container {
+    padding: 50px;
+  }
 }

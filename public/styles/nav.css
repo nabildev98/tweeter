@@ -1,15 +1,14 @@
 nav {
   height: 120px;
   width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: #4056a1;
+  color: #ffffff;
   padding-left: 1.5em;
   padding-right: 1.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-
 }
 .writeTweet {
   display: flex;
