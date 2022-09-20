@@ -1,11 +1,72 @@
-body > header {
-  padding-top: 120px;
+.profile {
+  height: 450px;
+  padding: 20px;
+  background-color: #169ec482;
+  background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+}
+
+.tweeter1, .writeTweet1 {
+  display: none; 
+}
+
+.nav1 {
+  display: none;
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+  .nav1 {
+    height: 120px;
+    width: 100%;
+    color: #FFFFFF;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+  }
+
+.tweeter1 {
+  display: block; 
+  font-family: "Bungee", sans serif;
+}
+
+.writeTweet1 {
   display: flex;
-  height: 520px;
-  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #e1c8bb82;
-  background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
+}
+
+nav {
+  display: none;
+}
+
+.profile {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  top: 300px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.new-tweet {
+  padding: 50px;
+}
+
+#tweet-container {
+  padding: 50px;
+}
 }

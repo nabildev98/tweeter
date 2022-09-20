@@ -1,7 +1,7 @@
 /*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
+* http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+* https://css-tricks.com/international-box-sizing-awareness-day/
+* Do not modify these two selectors, please
  */
 html {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ html {
  * Global layout stuff
  */
 
-body {
+ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -30,6 +30,33 @@ body > main {
   background-color: #e1c8bb;
 }
 
+.tweet-container {
+  padding-top: 200px;
+}
+
+@media only screen and (min-width: 1024px) {
+
+.tweet-container {
+  padding: 50px;
+  padding-top: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-container header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+}
+.tweet-container .container {
+  width: 60%;
+}
+}
+
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
